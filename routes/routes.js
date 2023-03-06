@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/adduser", upload, async (req, res) => {
+router.post("/add", upload, async (req, res) => {
   try {
     // i have to validate data and check for duplicate emails
     const user = new User({
@@ -51,4 +51,10 @@ router.get("/add", (req, res) => {
   res.render("addusers", { title: "Add User" });
 });
 
+router.get("/update/:id", async (req, res) => {
+  const id = req.params.id;
+  const user = await User.findById({ _id: id });
+  res.send("diaa");
+  res.render("edit.users.ejs", { user: user });
+});
 module.exports = router;
