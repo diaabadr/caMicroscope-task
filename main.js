@@ -33,7 +33,6 @@ app.use((req, res, next) => {
 
 // setting template engine
 app.set("view engine", "ejs");
-
 app.use("", require("./routes/routes"));
 
 app.use(express.static(__dirname + "/public"));
