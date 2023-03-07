@@ -12,11 +12,12 @@ const userSchema = new mongoose.Schema({
   phone: {
     type: String,
     required: true,
+    unique: true,
   },
   image: { type: String, required: true },
   createdAt: {
     type: Date,
-    required:true,
+    required: true,
     default: Date.now,
   },
 });

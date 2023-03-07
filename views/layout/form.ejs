@@ -1,0 +1,32 @@
+<div>
+    <form action="/add" method="post" class="hidden add-user-form" enctype="multipart/form-data">
+        <h3 class="form-header">Add User</h3>
+        <label for="name">Name</label>
+        <div class="input-box">
+            <input type="text" name="name" id="name" class="form-control form-control-1g" placeholder="Enter Name"
+                required>
+        </div>
+        <label for="email">Email</label>
+        <div class="input-box">
+            <input type="email" name="email" id="email" class="form-control form-control-1g" placeholder="Enter Email"
+                required>
+        </div>
+        <label for="phone">Phone</label>
+        <div class="input-box">
+            <input type="tel" name="phone" id="phone" class="form-control form-control-1g" placeholder="Enter Phone"
+                required>
+        </div>
+        <label for="image" class="form-label">Select Image</label>
+        <div class="input-box">
+            <input type="file" name="image" id="image" class="form-control form-control-1g" required>
+        </div>
+        <div class="submit-btn">
+            <button type="submit">Add User
+            </button>
+        </div>
+
+        <div class="cancel-btn">
+            <button type="button">Cancel
+            </button>
+        </div>
+    </form>

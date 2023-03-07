@@ -10,7 +10,7 @@ form{
     top: 50%;
     right:0;
     left:0;
-    width:500px;
+    width:600px;
     padding:40px;
     margin:0 auto;
     background-color: white;
@@ -19,6 +19,13 @@ form{
     box-shadow: 0 0 10px 20px -5px #ccc;
     border-radius: 20px;
     box-shadow: 0.5px 0.5px black;
+}
+
+.text-success{
+    cursor: pointer;
+}
+.text-danger{
+    cursor: pointer;
 }
 
 h3{
@@ -89,6 +96,8 @@ margin-bottom: 20px;
     -webkit-filter: blur(20px);
     background-color: grey;
 } 
+
+
 
 .css-modifications{
     color: #4CAF50;

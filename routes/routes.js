@@ -1,7 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/user");
 const multer = require("multer");
+
+const {
+  get_users,
+  add_user,
+  update_user,
+  get_user,
+  delete_user,
+} = require("../controller/user.controller");
+
 const storage = multer.diskStorage({
   destination: function (req, file, callback) {
     callback(null, "./public/uploads");
@@ -11,50 +19,26 @@ const storage = multer.diskStorage({
   },
 });
 
+
+// for files uploading
 const upload = multer({
   storage: storage,
 }).single("image");
 
-router.get("/", async (req, res) => {
-  try {
-    const users = await User.find();
-    res.render("index", { title: "Home", users: users });
-  } catch (error) {
-    res.json({
-      message: error.message,
-    });
-  }
-});
+// getting users data
+router.get("/", get_users);
 
-router.post("/add", upload, async (req, res) => {
-  try {
-    // i have to validate data and check for duplicate emails
-    const user = new User({
-      name: req.body.name,
-      email: req.body.email,
-      phone: req.body.phone,
-      image: req.file.filename,
-    });
-    const newUser = await user.save();
-    if (newUser)
-      req.session.message = {
-        type: "success",
-        message: "User added successfully",
-      };
-    res.redirect("/");
-  } catch (error) {
-    res.json({ error: error.message });
-  }
-});
+// getting user data for the form
+router.get("/:id", get_user);
 
-router.get("/add", (req, res) => {
-  res.render("addusers", { title: "Add User" });
-});
+// adding user
+router.post("/add", upload, add_user);
 
-router.get("/update/:id", async (req, res) => {
-  const id = req.params.id;
-  const user = await User.findById({ _id: id });
-  res.send("diaa");
-  res.render("edit.users.ejs", { user: user });
-});
+// updating user's data
+router.post("/update/:id", upload, update_user);
+
+
+// deleting user
+router.post("/delete/:id", delete_user);
+
 module.exports = router;

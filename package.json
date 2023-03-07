@@ -4,14 +4,15 @@
   "description": "Crud Commands using MongoDB and NodeJs",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-    ,"start": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "author": "Diaa Badr",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
+    "email-validator": "^2.0.4",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "mongoose": "^7.0.0",
