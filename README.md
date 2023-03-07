@@ -50,6 +50,7 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    git clone https://github.com/DiaaBadr/caMicroscope-task
    ```
+   ---
 4. Install NPM packages from terminal
    ```sh
    npm install
@@ -59,6 +60,10 @@ To get a local copy up and running follow these simple example steps.
     ```sh
     npm start
     ```
-11. Now open http://127.0.0.1:4000 on the browser.
+6. Now open http://127.0.0.1:4000 on the browser.
 
 
+**NOTE**
+
+Don't forget to add your environment variables (DataBase_URL, Your_Secret)
+---
